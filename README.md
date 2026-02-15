@@ -20,6 +20,26 @@ EduChain is a custom-built blockchain protocol designed to mitigate the risk of 
 
 ---
 
+## 📸 Project Demonstration
+
+### 1. Automated Security Validation
+![Security Audit](./assets/security_audit.png)
+*Figure 1: The system successfully detects a manual data alteration and invalidates the chain.*
+
+### 2. Proof-of-Work (PoW) Consensus
+![Mining Verification](./assets/pow_verification.png)
+*Figure 2: Verification of the mining process, showing the required computational effort (Nonce) to generate a valid block hash.*
+
+### 3. Full-Stack API Integration
+![API Workflow](./assets/api_workflow.png)
+*Figure 3: Synchronised interaction between the REST API, Postman testing suite, and the visual dashboard.*
+
+### 4. System Dashboard
+![System Dashboard](./assets/system_dashboard.png)
+*Figure 4: Real-time decentralised ledger monitoring interface.*
+
+---
+
 ## 🕹️ Getting Started
 
 ### 1. Installation
