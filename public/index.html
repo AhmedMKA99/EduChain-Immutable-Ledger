@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EduChain Dashboard</title>
+    <style>
+        body { font-family: sans-serif; background: #f4f4f4; padding: 20px; }
+        .block { background: white; border-radius: 8px; padding: 15px; margin-bottom: 10px; border-left: 5px solid #007bff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        h2 { color: #333; }
+        .hash { font-family: monospace; font-size: 12px; color: #666; word-break: break-all; }
+    </style>
+</head>
+<body>
+    <h1>EduChain Ledger Status</h1>
+    <div id="chain"></div>
+
+    <script>
+        fetch('/blockchain')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('chain');
+                data.chain.forEach(block => {
+                    const blockDiv = document.createElement('div');
+                    blockDiv.className = 'block';
+                    blockDiv.innerHTML = `
+                        <h3>Block #${block.index}</h3>
+                        <p><strong>Transactions:</strong> ${block.transactions.length}</p>
+                        <p class="hash"><strong>Hash:</strong> ${block.hash}</p>
+                        <p class="hash"><strong>Prev Hash:</strong> ${block.previousBlockHash}</p>
+                    `;
+                    container.appendChild(blockDiv);
+                });
+            });
+    </script>
+</body>
+</html>
